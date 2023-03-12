@@ -47,7 +47,7 @@ int countPairs2(int* arr, int len, int value) {
     }
     end++;
     int* tmp = end;
-    do{
+    do {
         if ((begin != end) && ((*begin + *end) == value)) {
             count++;
             end--;
