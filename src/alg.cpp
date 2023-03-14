@@ -41,17 +41,17 @@ int countPairs1(int* arr, int len, int value) {
 
 int countPairs2(int* arr, int len, int value) {
     int count = 0;
-    int* begin = arr, * end = &arr[len - 1];
-    while (*end > value) {
+    int begin = 0,  end = len - 1;
+    while (arr[end] > value) {
         end--;
     }
     end++;
-    int* tmp = end;
+    int tmp = end;
     do {
-        if ((begin != end) && ((*begin + *end) == value)) {
+        if ((begin != end) && ((arr[begin] + arr[end]) == value)) {
             count++;
             end--;
-        } else if ((*begin + *end) < value) {
+        } else if ((arr[begin] + arr[end]) < value) {
             begin++;
             end = tmp;
         } else {
